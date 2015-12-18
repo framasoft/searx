@@ -1,0 +1,14 @@
+{% macro which_host() -%}
+    {% if url_for('index', _external=True, _scheme='https') == 'https://tontonroger.org/' %}Tonton Roger
+    {%- elif url_for('index', _external=True, _scheme='https') == 'https://framabee.org/' %}Framabee
+    {%- else %}Trouvons !
+    {%- endif %}
+{%- endmacro %}
+
+{% macro which_fav() -%}
+    {% if url_for('index', _external=True, _scheme='https') == 'https://framabee.org/' %}
+framabee_favicon.png
+    {%- else %}
+favicon.png
+    {%- endif %}
+{%- endmacro %}

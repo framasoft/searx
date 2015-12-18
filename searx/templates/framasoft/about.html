@@ -1,0 +1,77 @@
+{% extends "framasoft/base.html" %}
+{% block site_alert_warning_nojs %} {% endblock %}
+{% block title %}{{ _('about') }} - {% endblock %}
+{% block content %}
+<div class="row">
+    <div class="col-md-12 has-results">
+        {% include 'frama/cog.html' %}
+        {% include 'framasoft/search.html' %}
+    </div>
+</div>
+<div>
+    <h1>À propos de <a href="{{ url_for('index') }}">Framabee</a></h1>
+
+    <p>Ce méta-moteur de recherche est une instance du logiciel libre <a href="https://github.com/asciimoo/searx">searx</a> agrémenté de quelques modifications effectuées par l'association <a href="http://framasoft.org">Framasoft</a>.</p>
+    <p>Searx est un <a href="https://fr.wikipedia.org/wiki/M%C3%A9tamoteur">métamoteur de recherche</a>, regroupant les résultats des autres <a href="{{ url_for('preferences') }}">moteurs de recherche</a> sans conserver d'informations sur ses utilisateurs.
+    </p>
+    <h2>Pourquoi utiliser Searx&nbsp;?</h2>
+    <ul>
+        <li>Searx ne vous offrira sans doute pas des résultats personnalisés comme Google, mais il ne générera pas votre profil non plus&nbsp;;</li>
+        <li>Searx ne s'intéresse pas à ce que vous recherchez, ne partage jamais rien avec un tiers, et ne peut pas être utilisé pour vous compromettre&nbsp;;</li>
+        <li>Searx est un logiciel libre, son code est 100% ouvert et vous pouvez participer à son amélioration. Plus d'informations sur <a href="https://github.com/asciimoo/searx">github</a>.</li>
+    </ul>
+    <p>Si vous faites attention à votre vie privée, si vous êtes un utilisateur averti ou si vous croyez à la liberté numérique, faites de Searx votre moteur de recherche par défaut, ou utilisez-le sur votre propre serveur.</p>
+
+<h2>Informations techniques - Comment cela fonctionne-t'il&nbsp;?</h2>
+
+<p>Searx est un <a href="https://fr.wikipedia.org/wiki/M%C3%A9tamoteur">métamoteur de recherche</a>,
+inspiré par le <a href="http://seeks-project.info/">projet Seeks</a>.<br />
+Il fournit une protection élémentaire de la vie privée en mélangeant vos demandes avec les recherches sur les autres plate-formes, sans stocker de données des recherches. Les demandes sont faites en faisant une requête POST sur chaque navigateur (excepté Chrome*). Par conséquent, elles n'apparaissent ni dans vos logs ni dans votre historique de navigation. Il existe toutefois une exception&nbsp;: pour les utilisateurs de Chrome*, Searx utilise la barre de recherche pour réaliser une requête GET.<br />
+Searx peut être ajouté à la barre de recherche de votre navigateur. Plus encore, il peut être utilisé comme moteur de recherche par défaut.
+</p>
+
+<h2>Comment puis-je le faire moi-même&nbsp;?</h2>
+
+<p>Searx apprécie votre préoccupation envers les logs. Prenez le <a href="https://github.com/asciimoo/searx">code</a> et lancez-le par vous-même&nbsp;! <br />Ajoutez votre Searx à cette <a href="https://github.com/asciimoo/searx/wiki/Searx-instances">liste</a> pour aider les autres à récupérer leur vie privée et rendre Internet plus libre&nbsp;!
+<br />Plus internet sera décentralisé plus nous aurons de liberté&nbsp;!</p>
+
+
+<h2>Plus d'informations sur Searx</h2>
+
+<ul>
+    <li><a href="https://github.com/asciimoo/searx">github</a></li>
+    <li><a href="https://www.ohloh.net/p/searx/">ohloh</a></li>
+    <li><a href="https://twitter.com/Searx_engine">twitter</a></li>
+    <li>IRC: #searx @ freenode (<a href="https://kiwiirc.com/client/irc.freenode.com/searx">webclient</a>)</li>
+    <li><a href="https://www.transifex.com/projects/p/searx/">transifex</a></li>
+</ul>
+
+<p>Le code du fork de Framasoft se trouve sur <a href="https://git.framasoft.org/framasoft/searx">https://git.framasoft.org/framasoft/searx</a>.</p>
+
+<hr />
+
+<h2 id="faq">FAQ</h2>
+
+<h3>Comment l'ajouter à Firefox&nbsp;?</h3>
+<p><a href="#" onclick="window.external.AddSearchProvider(window.location.protocol + '//' + window.location.host + '{{ url_for('opensearch') }}');">Installer</a> Searx comme un moteur de recherche sur n'importe quelle version de Firefox&nbsp;! (javascript requis)</p>
+
+<h3>Pourquoi est-il accessible depuis différents noms de domaines&nbsp;?</h3>
+<p>En effet, Framabee est accessible depuis <a href="https://framabee.org">https://framabee.org</a>, <a href="https://trouvons.org">https://trouvons.org</a> et <a href="https://tontonroger.org">https://tontonroger.org</a>. C'est tout simplement parce que nous voulions un nom en «&nbsp;frama***&nbsp;» comme la plupart de nos services, un nom plus sérieux pour pouvoir l'utiliser sans crainte du ridicule et enfin un nom rigolo simple à retenir :-)</p>
+
+<h2 id="dev_faq">FAQ Développeurs</h2>
+
+<h3>Nouveaux moteurs&nbsp;?</h3>
+<ul>
+    <li>Éditez votre fichier <a href="https://raw.github.com/asciimoo/searx/master/searx/settings.yml">settings.yml</a></li>
+    <li>Créez votre module de moteur personnalisé, jetez un coup d'œil à <a href="https://github.com/asciimoo/searx/blob/master/examples/basic_engine.py">l'exemple de moteur</a></li>
+</ul>
+<p>N'oubliez pas de relancer Searx après avoir édité sa configuration&nbsp;!</p>
+
+<h3>Installation/support WSGI&nbsp;?</h3>
+<p>Regardez la page wiki, rubrique <a href="https://github.com/asciimoo/searx/wiki/Installation">installation et configuration</a></p>
+
+<h3>Comment débugger les moteurs&nbsp;?</h3>
+<p>La <a href="{{ url_for('stats') }}">page de statistiques</a> contient des données utiles sur les moteurs utilisés.</p>
+
+</div>
+{% endblock %}
