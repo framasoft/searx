@@ -14,7 +14,7 @@
 
     <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}" type="text/css" />
     <link rel="stylesheet" href="{{ url_for('static', filename='themes/oscar/css/oscar.min.css') }}" type="text/css" />
-    <link rel="stylesheet" href="{{ url_for('static', filename='nav/css/frama.css') }}" type="text/css" />
+    <link rel="stylesheet" href="https://n3.framasoft.org/nav/css/frama.css" type="text/css" />
     <link rel="stylesheet" href="{{ url_for('static', filename='themes/frama/css/frama.css') }}" type="text/css" />
     <link rel="stylesheet" href="{{ url_for('static', filename='themes/oscar/css/leaflet.min.css') }}" type="text/css" />
     {% for css in styles %}
@@ -53,7 +53,7 @@
     </noscript>
 </head>
 <body>
-    <script src="{{ url_for('static', filename='nav/nav.js') }}" ></script>
+    <script src="https://n3.framasoft.org/nav/nav.js" ></script>
     <div class="container">
     {% block site_alert_error %}
     {% endblock %}
