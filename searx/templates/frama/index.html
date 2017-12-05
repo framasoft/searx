@@ -1,0 +1,21 @@
+{% extends "frama/base.html" %}
+{% block content %}
+<div class="col-md-12">
+    {% include 'frama/cog.html' %}
+    <div class="text-center row menu-container">
+        {% if url_for('index', _external=True, _scheme='https') == 'https://tontonroger.org/' %}
+        <h1 class="center-block title"><span class="frama">Tonton</span> <span class="services">Roger</span></h1>
+        <h4 class="hidden-xs">Une question&nbsp;? Demande à tonton Roger&nbsp;!</h4>
+        {% elif url_for('index', _external=True, _scheme='https') == 'https://framabee.org/' %}
+        <h1 class="center-block title">
+            <img src="{{ url_for('static', filename='themes/frama/img/framabee_logo.png') }}" alt="searx logo"/> <span class="frama">Frama</span><span class="services">bee</span>
+        </h1>
+        <h4 class="hidden-xs">Le moteur qui butine les internets pour vous.</h4>
+        {% else %}
+        <h1 class="center-block title"><span class="frama">Trouvons</span><span class="services">.org</span></h1>
+        {% endif %}
+    </div>
+    {% include 'frama/search.html' %}
+    {% include 'frama/explain.html' %}
+</div>
+{% endblock %}

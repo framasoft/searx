@@ -343,6 +343,8 @@ def render(template_name, override_theme=None, **kwargs):
     if get_locale() in rtl_locales and 'rtl' not in kwargs:
         kwargs['rtl'] = True
 
+    kwargs['locale'] = get_locale()
+
     kwargs['searx_version'] = VERSION_STRING
 
     kwargs['method'] = request.preferences.get_value('method')
