@@ -1,0 +1,22 @@
+{% from 'framasoft/macros.html' import which_host %}
+<div class="row explain">
+    <div class="col-md-4">
+        <h3>Spécificité</h3>
+        <p class="text-center"><span class="glyphicon glyphicon-question-sign font-50px"></span></p>
+        <p>{{ which_host() }} est un métamoteur de recherche regroupant les résultats d'autres moteurs de recherche mais sans conserver d'informations sur les utilisateurs.</p>
+        <p>{{ which_host() }} ne vous trace pas, ne partage aucune donnée avec un tiers et ne peut pas être utilisé pour vous compromettre.</p>
+    </div>
+    <div class="col-md-4">
+        <h3>Le logiciel</h3>
+        <p class="text-center"><span class="glyphicon glyphicon-cloud font-50px"></span></p>
+        <p>{{ which_host() }} est une instance du logiciel libre <a href="https://github.com/asciimoo/searx">searx</a> agrémenté de quelques modifications effectuées par l'association Framasoft.</p>
+        <p>Pour en savoir plus, rendez-vous sur la page <a href="{{ url_for('about') }}">À propos</a></p>
+    </div>
+    <div class="col-md-4">
+        <h3>Cultivez votre jardin</h3>
+        <p class="text-center"><span class="glyphicon glyphicon-tree-deciduous font-50px"></span></p>
+        <p>Pour participer au développement du logiciel, proposer des améliorations ou simplement le télécharger, rendez-vous sur <a href="https://github.com/asciimoo/searx">le site de développement</a>.</p>
+        <p>Si vous souhaitez installer ce logiciel pour votre propre usage et ainsi gagner en autonomie, nous vous aidons sur&nbsp;:</p>
+        <p class="text-center"><a href="http://framacloud.org/cultiver-son-jardin/installation-de-searx/" class="btn btn-success"><span class="glyphicon glyphicon-tree-deciduous"></span> framacloud.org</a></p>
+    </div>
+</div>

@@ -125,7 +125,7 @@ grunt_build() {
     echo '[!] Grunt build : oscar theme'
     grunt --gruntfile "$SEARX_DIR/static/themes/oscar/gruntfile.js"
     echo '[!] Grunt build : frama theme'
-    grunt --gruntfile "$SEARX_DIR/static/themes/frama/gruntfile.js"
+    grunt --gruntfile "$SEARX_DIR/static/themes/framasoft/gruntfile.js"
     echo '[!] Grunt build : simple theme'
     grunt --gruntfile "$SEARX_DIR/static/themes/simple/gruntfile.js"
 }
