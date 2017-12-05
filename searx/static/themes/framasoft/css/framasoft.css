@@ -133,15 +133,11 @@ a.result-href:focus {
 #search_form {
   text-align: center;
 }
-#search_form .row:first-child {
+#search_form .row {
   margin-bottom: 15px;
 }
 #search_form #language {
   min-width: 13em;
-}
-#search_form .selects {
-  display: inline-flex;
-  margin: 1em 0;
 }
 #search_form .search-wrapper {
   display: inline-flex;
