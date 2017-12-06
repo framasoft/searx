@@ -11,8 +11,7 @@
 {% block title %}{{ q|e }} - {% endblock %}
 {% block meta %}<link rel="alternate" type="application/rss+xml" title="Searx search: {{ q|e }}" href="{{ search_url() }}&amp;format=rss">{% endblock %}
 {% block content %}
-    {% include 'framasoft/search.html' %}
-    {% include 'framasoft/cog.html' %}
+    {% include 'framasoft/search_on_results.html' %}
     <div class="row">
         <div class="col-sm-8" id="main_results">
             <h1 class="sr-only">{{ _('Search results') }}</h1>

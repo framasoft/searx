@@ -72,8 +72,8 @@ a.result-href, a.result-href:hover, a.result-href:focus {
     #menu {
         margin-top: 1.8em;
     }
-    .has-results #menu {
-        margin-top: 0.8em;
+    .in-results #menu {
+        margin-top: 0;
     }
 
     .explain {
